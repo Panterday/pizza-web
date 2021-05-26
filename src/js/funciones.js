@@ -10,9 +10,13 @@ import logoPlayStore from '../assets/logos/logoPlayStore.png';
 import logoTwitter from '../assets/logos/logoT.png';
 import logoTel from '../assets/logos/logoTel.png';
 import logoWhatsApp from '../assets/logos/logoW.png';
+import { creaForm } from './crea-formulario';
 
 let todosIngredientes = [aceitunas, jalapeño, piña, aguacate, peperoni];
+let todosIngredientesTxt = ["aceitunas", "jalapeño", "piña", "aguacate", "peperoni"];
+
 const contIzq = document.getElementById('cont-izq'); 
+const divDer = document.querySelector('#arma-pizza');
 
 const crearHTML = ()=>{
     console.log('inside of main')
@@ -61,22 +65,32 @@ const añandeIngrediente = ()=>{
     for(let x of listaCheckbox){
         listaImg.push(creaImagen(todosIngredientes[x.value]))
     }
-
     for(let x of listaCheckbox){
         x.addEventListener('change', ()=>{
             if(x.checked){
-                contIzq.append(listaImg[x.value]); 
+                contIzq.append(listaImg[x.value]);
             }else{
                 contIzq.removeChild(listaImg[x.value]);
             }
         }) 
-    }
+    } 
 }
-const divDer = document.querySelector('#arma-pizza');
+
+
 const eliminaDiv = ()=>{
+    let nuevaIng = []; 
     const botonAceptar = document.querySelector('#botonAceptar');
     botonAceptar.addEventListener('click', ()=>{
-        document.querySelector('.ingredientes').style.display = 'none'; 
+        let listaCheckbox = document.querySelectorAll('.miCaja')
+        for(let x of listaCheckbox){
+            console.log(x.checked)
+            if(x.checked){
+                nuevaIng.push(todosIngredientesTxt[x.value])
+            }
+        }
+        console.log(nuevaIng)
+        botonAceptar.style.display  = 'none'; 
+        creaForm();  
     }) 
 }
 
