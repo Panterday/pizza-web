@@ -1,38 +1,274 @@
-@font-face {
-    font-family: "Chalet";
-    src: url("./assets/chalet.woff") format("woff");
-}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');
 
-html {
+
+*{
     box-sizing: border-box;
-    font-family: "Chalet", sans-serif;
-    font-size: 16px;
-    background-color: #2b3a42;
-    color: #8dd6f9;
-    background-image: url("assets/cohete.jpg");
-}
-
-.icon {
-    max-width: 4rem;
-}
-
-#secondImage{
-    width: 300px;
-}
-body{
     margin: 0;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100%;
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.todo > *{
+    background-color: orange;
+}
+
+.header{
+    font-family: 'Bebas Neue', cursive;
+    grid-area: header;
+    background-color: #FF671B;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 1px 10px black;
+    z-index: 10; 
+    top: 0;
+    left: 0;
+} 
+
+.logo {
+    float: left;
+    margin-left: 12%;
+    margin-top: 1%;
+    color: white;
+    cursor:pointer;
+    font-size: 2.8em;
+}
+
+.menu{
+    float: right; 
+    margin-right: 13%;
+    margin-top: 2.3em;
+}
+
+.menu a{
+    color: white; 
+    text-decoration: none;
+    padding: 1.5em;
+    transition: all 500ms ease;
+    font-size: 1.1em;
+}
+.promociones{
+    grid-area: promociones;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    overflow: hidden;
+    
+}
+
+.cuadro-promos{
+    background-color: #FF671B;
+    width: 32%;
+    height: 100%;
+    padding: 1%;
+}
+
+.head-cuadro-promos{
+    /* background-color:purple; */
     text-align: center;
 }
 
-a {
+.desc-precio{
+    /* background-color: pink; */
+    display: flex;
+    position: relative; 
+    bottom: 12%;
+    height: 10em;
+}
+
+.precio{
+    font-size: 8.6vw; 
+    font-family: 'Anton', sans-serif;
     color: white;
 }
 
-.myMenu {
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-evenly;
+.promo-descripcion{
+    /* background-color: red; */
+    font-size: 1.6vw;
+    margin-top: 3vw; 
+    color: white; 
 }
+
+.text-promos {
+    font-family: 'Anton', sans-serif;
+    font-size: 5vw;
+    color: white;
+}
+
+.subtext-promos{
+    font-size: 2.6vw;
+    position: relative;
+    left: 2.6em;
+    bottom: 0.7em;
+}
+
+.body{
+    grid-area: body;
+    background-color: #FF671B;
+    display: flex;
+}
+
+.contenido-izq{
+    text-align: center;
+    width: 50%;
+    position: relative;
+}
+
+.pizzaImg{
+    height: 35vw;
+    transition: transform .3s; 
+    margin-top: 3em;
+}
+
+.ing{
+    height: 34vw;
+    position: absolute;
+    top: 11%;
+    right: 11%;
+}
+
+.contenido-der{
+    /* background-color: red; */
+    text-align: center;
+    width: 65%;
+    height: 30em;
+    
+}
+
+.ingredientes{
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-right: 50%;
+    margin-top: 2%;
+    gap: 1em;
+}
+
+#titulo{
+    font-size: 2.2em;
+}
+
+.ingrediente{
+    font-size: 1.9em;
+}
+
+.boton-aceptar{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    height: 2.5em;
+    width: 9em;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: white;
+    border-radius: 0.7em;
+    border: none;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    transition-duration: 400ms;
+}
+
+.boton-aceptar:hover{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition-duration: 400ms;
+}
+
+.miCaja{
+    width: 1.5em;
+    height: 1.5em; 
+    cursor: pointer;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: white;
+    margin-bottom: 0%;
+    margin-top: 3%;
+
+}
+
+.linea{
+    height: 1px;
+    border: none;
+    background: #FF671B;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.conten-footer{
+    padding: 1%;
+    padding-left: 6%;
+}
+
+.logoF{
+    height: 3em;
+}
+
+.descarga{
+    float: right;
+    width: 15%;
+    margin-right: 5%;
+    display: flex;
+    gap: 7%;
+    padding-top: 0.5%;
+}
+
+.desc-footer{
+    grid-area: desc-footer;
+    background-color: white;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.todo{
+    display: grid;
+    gap: 1.5em; 
+    grid-template-areas:
+        "header" 
+        "promociones" 
+        "body"
+        "footer" 
+        "desc-footer"
+    ;
+}
+
+.todo{
+    grid-template:
+        "header" 4.5em
+        "promociones" 21vw
+        "body" 
+        "footer" 
+        "desc-footer"
+; 
+}
+
+@media (max-width:768px){
+    .todo{
+        grid-template:
+            "header" 
+            "promociones" 
+            "body"
+            "footer"
+        ;
+    }
+
+    body{
+        font-size: 15px;
+    }
+
+}
+
