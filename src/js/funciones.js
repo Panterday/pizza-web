@@ -11,6 +11,7 @@ import logoTwitter from '../assets/logos/logoT.png';
 import logoTel from '../assets/logos/logoTel.png';
 import logoWhatsApp from '../assets/logos/logoW.png';
 import { creaForm } from './crea-formulario';
+import { muestraPedidos } from './pedidos';
 
 let todosIngredientes = [aceitunas, jalapeño, piña, aguacate, peperoni];
 let todosIngredientesTxt = ["aceitunas", "jalapeño", "piña", "aguacate", "peperoni"];
@@ -19,7 +20,6 @@ const contIzq = document.getElementById('cont-izq');
 const divDer = document.querySelector('#arma-pizza');
 
 const crearHTML = ()=>{
-    console.log('inside of main')
     const logos = document.getElementById('logos');
     const llamanos = document.getElementById('llamanos'); 
     
@@ -76,26 +76,30 @@ const añandeIngrediente = ()=>{
     } 
 }
 
+export let nuevaIng = [];
+
+const nuevaListaIng = (lista)=>{
+    nuevaIng = lista; 
+}
 
 const eliminaDiv = ()=>{
-    let nuevaIng = []; 
+     
     const botonAceptar = document.querySelector('#botonAceptar');
     botonAceptar.addEventListener('click', ()=>{
         let listaCheckbox = document.querySelectorAll('.miCaja')
         for(let x of listaCheckbox){
-            console.log(x.checked)
             if(x.checked){
                 nuevaIng.push(todosIngredientesTxt[x.value])
             }
         }
-        console.log(nuevaIng)
-        botonAceptar.style.display  = 'none'; 
-        creaForm();  
+        botonAceptar.style.display  = 'none';
+        creaForm(); 
     }) 
 }
 
 export{
     crearHTML,
     añandeIngrediente,
-    eliminaDiv
+    eliminaDiv,
+    nuevaListaIng
 }

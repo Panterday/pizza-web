@@ -20,7 +20,7 @@ body{
 }
 
 .todo > *{
-    background-color: orange;
+
 }
 
 .header{
@@ -217,6 +217,45 @@ body{
     cursor: pointer;
 }
 
+.cuadro-pedidos{
+    grid-area: cuadro-pedidos;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+    text-align: center;
+}
+
+.cuadro{
+    width: 10em;
+    padding: 0.5em;
+    border: 1px solid #FF671B; 
+    border-radius: 8px;
+}
+
+.btnEnviado{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    height: 2.5em;
+    width: 6em;
+    background-color: black;
+    color: white;
+    border-radius: 0.7em;
+    border: none;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    transition-duration: 400ms;
+}
+
+.btnEnviado:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    transition-duration: 400ms;
+}
+
 .footer{
     grid-area: footer;
     background-color: white;
@@ -265,6 +304,7 @@ body{
         "header" 
         "promociones" 
         "body"
+        "cuadro-pedidos"
         "footer" 
         "desc-footer"
     ;
@@ -275,6 +315,7 @@ body{
         "header" 4.5em
         "promociones" 21vw
         "body" 
+        "cuadro-pedidos"
         "footer" 
         "desc-footer"
 ; 
@@ -292,6 +333,174 @@ body{
 
     body{
         font-size: 15px;
+    }
+
+}
+
+@media (max-width:500px){
+    .todo{
+        /* grid-template:
+            "header" 
+            "promociones" 
+            "body"
+            "footer"
+            "desc-footer"
+        ; */
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    body{
+        font-size: 16px;
+    }
+
+    .promociones{
+        /* background-color: purple; */
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 17%
+        /* grid-area: promociones;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: purple;
+        width: 100%; 
+        overflow: hidden;
+        gap: 1em; */
+        
+    }
+
+    .promo-descripcion{
+        /* background-color: red; */
+        font-size: 5vw;
+        margin-top: 3vw; 
+        color: white; 
+    }
+
+    .precio{
+        font-size: 16vw; 
+        font-family: 'Anton', sans-serif;
+        color: white;
+    }
+
+    .text-promos {
+        font-family: 'Anton', sans-serif;
+        font-size: 11vw;
+        color: white;
+    }
+    
+    .subtext-promos{
+        font-size: 6vw;
+        position: relative;
+        left: 2.6em;
+        bottom: 0.7em;
+    }
+
+    .cuadro-promos{
+        background-color: #FF671B;
+        width: 100%;
+        padding: 3%;
+        /* background-color: #FF671B;
+        width: 100%;
+        height: 90%;
+        padding: 1%; */
+    }
+
+    .menu{
+        float: right; 
+        /* margin-right: 13%;
+        margin-top: 2.3em; */
+    }
+    
+    .menu a{
+        color: white; 
+        text-decoration: none;
+        padding: 0.5em;
+        transition: all 500ms ease;
+        font-size: 1.1em;
+    }
+
+    #titulo{
+        font-size: 1.5em;
+    }
+
+    .ingrediente{
+        font-size: 1.1em;
+    }
+
+    .boton-aceptar{
+        text-decoration: none;
+        font-family: 'Bebas Neue', cursive;
+        height: 1.7em;
+        width: 8em;
+        
+        font-size: 1.3em;
+        font-weight: 600;
+        /* padding-left: 2em;
+        padding-right: 4.3em; */
+        background-color: white;
+        border-radius: 0.7em;
+        border: none;
+        /* margin-top: 3%;
+        margin-bottom: 3%; */
+        transition-duration: 400ms;
+    }
+
+    .formulario{
+        background-color: #dddcdb85;
+        width: 80%;
+        padding: 1%;
+        margin: auto;
+        border-radius: 3px;
+    }
+
+    .body{
+        background-color: #FF671B;
+        display: flex;
+        height: 35.5em;
+    }
+
+    .pizzaImg{
+        height: 45vw;
+        transition: transform .3s; 
+        margin-top: 3em;
+    }
+
+    .ing{
+        height: 44vw;
+        position: absolute;
+        top: 9%;
+        right: 2%;
+    }
+
+    .caja{
+        border: 0;
+        border-radius: 3px;
+        height: 2em;
+        width: 30vw;
+        padding: 1em;
+    }
+    
+
+    .footer{
+        /* grid-area: footer;
+        background-color: white;
+        margin-bottom: 0%;
+        margin-top: 3%; */
+    
+    }
+
+    .descarga{
+        float: right;
+        margin-right: 25%;
+        /* float: right;
+        width: 15%;
+        margin-right: 5%;
+        display: flex;
+        gap: 7%;
+        padding-top: 0.5%; */
     }
 
 }
